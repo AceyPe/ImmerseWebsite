@@ -25,6 +25,18 @@ const colors = {
         800: '#11164d',
         900: '#0a0e2a',
     },
+    Yellow: {
+        50: "#FFF4CC",   // Lightest
+        100: "#FFE799",  // Very Light
+        200: "#FFDB66",  // Light
+        300: "#FFCE33",  // Soft Yellow
+        400: "#FFC800",  // Base Yellow
+        500: "#E6B300",  // Slightly Darker
+        600: "#CC9F00",  // Darker
+        700: "#B38A00",  // Even Darker
+        800: "#997600",  // Much Darker
+        900: "#806200",
+    }
 };
 
 const theme = extendTheme({
@@ -36,17 +48,17 @@ const theme = extendTheme({
             },
             variants: {
                 solid: (props) => ({
-                    bg: colors.softGreen[500],
+                    bg: colors.Yellow[500],
                     color: "white",
                     _hover: {
-                        bg: colors.softGreen[600],
+                        bg: colors.Yellow[600],
                     },
                 }),
                 outline: (props) => ({
-                    borderColor: colors.softGreen[500],
-                    color: colors.softGreen[500],
+                    borderColor: colors.Yellow[500],
+                    color: colors.Yellow[500],
                     _hover: {
-                        bg: colors.softGreen[50],
+                        bg: colors.Yellow[50],
                     },
                 }),
             },
