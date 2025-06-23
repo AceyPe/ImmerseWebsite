@@ -8,9 +8,11 @@ import navItems from "../assets/json/navbaritems.json"
 
 export const Navbar = () => {
     // const [menuOpen, setMenuOpen] = useState(false);
-    const [activeLink, setActiveLink] = useState(window.location);
+    const [activeLink, setActiveLink] = useState(window.location.pathname);
     const { user } = useAuth();
 
+
+    // console.log(window.location.pathname)
 
     const handleLinkClick = (path) => {
         setActiveLink(path);

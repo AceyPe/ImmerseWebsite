@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Customizable Scenarios",
+        "desc": "Easily adapt therapy environments to suit each patient's needs — something not possible in real-world exposure therapy"
+    },
+    {
+        "title": "Real-Time Monitoring",
+        "desc" : "Monitor biometric feedback live — heart rate, stress levels, and more — with no need for intrusive physical setups"
+    },
+    {
+        "title": "Immersive Exposure Therapy",
+        "desc" : "Fully immerse patients in controlled environments, allowing for repeatable and measurable progress"
+    },
+    {
+        "title": "Remote Accessibility",
+        "desc" : "Conduct sessions from anywhere — ideal for lockdowns, travel restrictions, or underserved areas"
+    },
+    {
+        "title": "AI-Powered Personalization",
+        "desc" : "Let AI adjust dialogue and tone based on patient behavior and biometrics"
+    },
+    {
+        "title": "Better Engagement & Motivation",
+        "desc" : "Gamified tasks and responsive environments help patients stay engaged and committed to therapy"
+    }
+]

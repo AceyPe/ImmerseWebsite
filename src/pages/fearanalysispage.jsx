@@ -129,10 +129,10 @@ export const FearAnalysisPage = () => {
                 <h2 className="text-2xl">this form will help us keep track of how the treatment is going before and after each session</h2>
             </div>
             <div className="form flex flex-col gap-10">
-                {/* Name */}
+                {/* Name , will be removed later */}
                 <FormControl isRequired isInvalid={nameInvalid}>
                     <FormLabel fontWeight={"bold"} fontSize={"xl"}>Name</FormLabel>
-                    <Input className="!border-white text-white hover:!border-yellow-500 focus:!border-yellow-500" onChange={(e) => setNameInput(e.target.value)} px={40} />
+                    <Input className="!border-white text-white hover:!border-yellow-500 focus:!border-yellow-500" onChange={(e) => setNameInput(e.target.value)} />
                 </FormControl>
 
                 <FormControl isRequired isInvalid={sessionIdInvalid}>

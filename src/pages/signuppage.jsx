@@ -152,9 +152,11 @@ export const SignupPage = () => {
         const sanitizedParentId = parentId? sanitizeInput(parentId) : null;
         const sanitizedTherapistId = sanitizeInput(therapistId);
 
+        console.log(therapistId);
+
 
         try {
-            const response = await Register({ password: sanitizedPassword, name: sanitizedName, email: sanitizedEmail, age: sanitizedAge, phone: sanitizedPhone, role, parentId: sanitizedParentId, sanitizedTherapistId});
+            const response = await Register({ password: sanitizedPassword, name: sanitizedName, email: sanitizedEmail, age: sanitizedAge, phone: sanitizedPhone, role, parentId: sanitizedParentId, therapistId: sanitizedTherapistId});
             console.log(response);
             navigate('/', { replace: true });
         } catch (err) {
@@ -164,7 +166,6 @@ export const SignupPage = () => {
         }
 
     }
-   
 
     return (
         <div className='signup-wrapper flex  flex-col items-center py-20 gap-10 text-white'>

@@ -1,10 +1,12 @@
 import React from "react"
-import { Hero } from '../components/homepage/homeHero'
+import { Hero } from '../components/homepage/hero'
+import { Benefits } from "../components/homepage/benefits";
     
 export const HomePage = () => {
     return (
-        <section className="px-4 py-20 lg:py-20 lg:px-20 text-white grid lg:flex md:flex-col gap-20">
+        <section className="spac-y-20 w-full text-white grid lg:flex md:flex-col gap-20">
             <Hero />
+            <Benefits />
         </section>
     )
 };

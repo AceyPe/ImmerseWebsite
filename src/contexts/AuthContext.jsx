@@ -10,7 +10,7 @@ export function AuthProvider({ children }) {
 
     useEffect(() => {
         auth.get('/me')
-            .then(res => setUser({ id: res.data.id, role: res.data.role, roleId: res.data.roleId }))
+            .then(res => setUser({ id: res.data.id, role: res.data.role}))
             .catch(() => setUser(null))
             .finally(() => setAuthLoading(false));
     }, []);
@@ -20,7 +20,7 @@ export function AuthProvider({ children }) {
     const login = async (email, password) => {
         await Login(email, password)
         const me = await auth.get('/me');
-        setUser({ id: me.data.id, role: me.data.role, roleId: me.data.roleId });
+        setUser({ id: me.data.id, role: me.data.role });
     };
 
     const logout = async () => {
