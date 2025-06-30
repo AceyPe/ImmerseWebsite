@@ -45,6 +45,7 @@ const theme = extendTheme({
         Button: {
             baseStyle: {
                 fontWeight: "bold", // Add a consistent style for buttons
+                boxShadow: "xl"
             },
             variants: {
                 solid: (props) => ({
@@ -53,6 +54,9 @@ const theme = extendTheme({
                     _hover: {
                         bg: colors.Yellow[600],
                     },
+                    _active: {
+                        bg: colors.Yellow[300]
+                    }
                 }),
                 outline: (props) => ({
                     borderColor: colors.Yellow[500],
@@ -61,6 +65,37 @@ const theme = extendTheme({
                         bg: colors.Yellow[50],
                     },
                 }),
+            },
+        },
+        Input: {
+            variants: {
+                outline: {
+                    field: {
+                        _focus: {
+                            borderColor: colors.Yellow[500],   // Change border color on focus
+                            boxShadow: "0 0 0 1px #ECC94B", // Optional: yellow outline ring
+                        },
+                        _hover: {
+                            borderColor: colors.Yellow[500]
+                        }
+                    },
+                },
+            },
+        },
+        Textarea: {
+            baseStyle: {
+                height:"200px",
+            },
+            variants: {
+                outline: {
+                        _focus: {
+                            borderColor: colors.Yellow[500],   // Change border color on focus
+                            boxShadow: "0 0 0 1px #ECC94B", // Optional: yellow outline ring
+                        },
+                        _hover: {
+                            borderColor: colors.Yellow[500]
+                        }
+                },
             },
         },
     },

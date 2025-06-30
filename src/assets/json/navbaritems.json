@@ -7,35 +7,40 @@
     },
     {
         "id": "2",
+        "title": "Products",
+        "href": "/products",
+        "role": "any"
+    },
+    {
+        "id": "3",
         "title": "Parent's Feedback",
         "href": "/parentfeedback",
         "role": "parent"
     },
     {
-        "id": "3",
+        "id": "4",
         "title": "Fear Analysis",
         "href": "/fearanalysis",
         "role": "patient"
     },
     {
-        "id": "4",
+        "id": "5",
         "title": "Dashboard",
         "href": "/dashboard",
         "role": "therapist"
     },
     {
-        "id": "5",
+        "id": "6",
         "title": "About",
         "href": "/about",
         "role": "any"
     },
     {
-        "id": "6",
+        "id": "7",
         "title": "Contact Us",
         "href": "/contact",
         "role": "any"
     }
-
     
     
 ]

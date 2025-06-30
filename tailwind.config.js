@@ -26,13 +26,19 @@ module.exports = {
                     backgroundPosition: '100% 50%',
                 },
                 },
+                fadeIn: {
+                    '0%': {opacity: '0'},
+                    '100%': {opacity: '1'},
+                },
             },
             animation: {
                 backgroundFade: 'backgroundFade 15s ease infinite',
+                backgroundSize: {
+                    '200': '200% 200%',
+                },
+                fadeIn: 'fadeIn 1.5s ease-in-out forwards'
             },
-            backgroundSize: {
-                '200': '200% 200%',
-            },
+            
         },
     },
     plugins: [],

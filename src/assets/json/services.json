@@ -1,0 +1,21 @@
+[
+    
+    {
+        "title":"📦 VR & Sensor Kit Rental",
+        "desc" :"Rent our full kit with everything you need to begin immersive therapy, ideal for short-term use or pilots.",
+        "buttonTitle" :"Buy Now",
+        "buttonLink" :"/products"
+    },
+    {
+        "title":"💻 CalmaVR App License",
+        "desc":"Just need the software? Purchase a standalone license and use your own headset.",
+        "buttonTitle" :"Buy Now",
+        "buttonLink" :"/products"
+    },
+    {
+        "title":"🧠 Full CalmaVR Package",
+        "desc" :"Includes everything without the headset: sensors, software, free maintainance for 2 months,and access to all future updates.",
+        "buttonTitle" :"Buy Now",
+        "buttonLink" :"/products"
+    }
+]

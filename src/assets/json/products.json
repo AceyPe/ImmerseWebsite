@@ -1,0 +1,31 @@
+[
+    {
+        "title":"Application License",
+        "monthlyPrice":"$29",
+        "yearlyPrice":"$348",
+        "listItems": [
+            "✅ Access to VR Therapy Application",
+            "✅ Therapy Session Recording",
+            "✅ Basic Exposure Scenarios",
+            "❌ VR Headset",
+            "❌ Sensor Kit",
+            "❌ Multi-user support"
+        ],
+        "description":"For therapists who already own the required VR equipment and want access to the core therapeutic software.",
+        "idealFor":"Ideal for solo therapists using personal VR hardware."
+    },
+    {
+        "title":"Rental Services",
+        "monthlyPrice": "$49",
+        "yearlyPrice" : "$588",
+        "description" : "All the benefits of the software plus essential hardware, fully rented—no upfront investment needed.",
+        "listItems" : [
+            "✅ Access to VR Therapy Application",
+            "✅ Therapy Session Recording",
+            "✅ Full Scenario Library",
+            "✅ VR Headset (rental)",
+            "✅ Sensor Kit (rental)"
+        ],
+        "idealFor" : "Great for therapists who need a plug-and-play setup with no hardware ownership."
+    }
+]

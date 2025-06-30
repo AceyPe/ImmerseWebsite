@@ -12,9 +12,9 @@ import {
     ListItem,
     useDisclosure,
 } from '@chakra-ui/react'
-import { LoadingSpinnerOverLay } from '../components/loadingSpinnerOverlay';
-import { Register } from '../api/api';
-import { RadioRating } from '../components/radiorating'
+import { LoadingSpinnerOverLay } from '../../components/loadingSpinnerOverlay';
+import { Register } from '../../api/api';
+import { RadioRating } from '../../components/radiorating'
 
 export const SignupPage = () => {
     const [nameInput, setNameInput] = useState('');
@@ -170,40 +170,39 @@ export const SignupPage = () => {
     return (
         <div className='signup-wrapper flex  flex-col items-center py-20 gap-10 text-white'>
 
-            <h1 className="text-center text-primary text-4xl font-bold">Sign up page</h1>
-            <div className='signup flex flex-col gap-10 lg:w-[40rem] md:w-[25rem] w-[15rem] '>
-
+            <div className='signup flex flex-col gap-10 lg:w-[40rem] w-[25rem] px-8 md:px-20 py-16 my-auto rounded-xl shadow-md  animate-backgroundFade bg-gradient-to-r from-[#273774] via-[#3c56b4] to-[#273774] bg-[length:200%_200%]'>
+                <h1 className="text-center text-primary text-4xl font-bold">Sign up</h1>
                 {/* full name control */}
                 <FormControl isRequired isInvalid={nameError}>
                     <FormLabel fontWeight={"bold"} fontSize={"xl"}>Full Name</FormLabel>
-                    <Input className="text-white hover:!border-yellow-500 focus:!border-yellow-500" onChange={onChangeName} />
+                    <Input onChange={onChangeName} />
                     <FormErrorMessage>{nameErrorMessage}</FormErrorMessage>
                 </FormControl>
 
                 {/* Email control */}
                 <FormControl isRequired isInvalid={emailError}>
                     <FormLabel fontWeight={"bold"} fontSize={"xl"}>Email</FormLabel>
-                    <Input className=" text-white hover:!border-yellow-500 focus:!border-yellow-500" type='Email' onChange={onChangeEmail} />
+                    <Input type='Email' onChange={onChangeEmail} />
                     <FormErrorMessage>{emailErrorMessage}</FormErrorMessage>
                 </FormControl>
 
                 {/* Age control */}
                 <FormControl isRequired>
                     <FormLabel fontWeight={"bold"} fontSize={"xl"}>Age</FormLabel>
-                    <Input className=" text-white hover:!border-yellow-500 focus:!border-yellow-500" onChange={onChangeAge} />
+                    <Input onChange={onChangeAge} />
                 </FormControl>
 
                 {/* phone number */}
                 <FormControl isRequired isInvalid={phoneError}>
                     <FormLabel fontWeight={"bold"} fontSize={"xl"}>Phone Number</FormLabel>
-                    <Input className=" text-white hover:!border-yellow-500 focus:!border-yellow-500" onChange={onChangePhone} />
+                    <Input onChange={onChangePhone} />
                     <FormErrorMessage>{phoneErrorMessage}</FormErrorMessage>
                 </FormControl>
 
                 {/* password control */}
                 <FormControl isRequired isInvalid={passwordError}>
                     <FormLabel fontWeight={"bold"} fontSize={"xl"} >Password</FormLabel>
-                    <Input className="text-white hover:!border-yellow-500 focus:!border-yellow-500" type='password' onChange={onChangePassword} />
+                    <Input type='password' onChange={onChangePassword} />
                     <FormErrorMessage>
                         <List>
                         <p>please enter a valid password, it should contain the following:</p>
@@ -235,14 +234,14 @@ export const SignupPage = () => {
                 {role === "patient" &&
                     <FormControl isInvalid={parentIdError}>
                     <FormLabel fontWeight={"bold"} fontSize={"xl"}>ParentId (if parent is present)</FormLabel>
-                    <Input className=" text-white hover:!border-yellow-500 focus:!border-yellow-500" onChange={onChangeParentId} />
+                    <Input onChange={onChangeParentId} />
                     <FormErrorMessage>{parentIdMessage}</FormErrorMessage>
                     </FormControl>}
                 
                 {role === "patient" &&
                     <FormControl isRequired isInvalid={therapistIdError}>
                         <FormLabel fontWeight={"bold"} fontSize={"xl"}>TherpistId (refer to your therapist)</FormLabel>
-                        <Input className=" text-white hover:!border-yellow-500 focus:!border-yellow-500" onChange={onChangeTherapistId} />
+                        <Input onChange={onChangeTherapistId} />
                         <FormErrorMessage>{therapistIdMessage}</FormErrorMessage>
                     </FormControl>}
                 

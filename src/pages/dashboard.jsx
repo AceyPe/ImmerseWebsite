@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import  { useState, useEffect, useMemo } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { SideMenu } from "../components/dashboard/sidemenu";
@@ -17,6 +17,7 @@ import {
   getSessionsByTherapistId
 } from "../api/api";
 import { DataViewer } from "../components/dashboard/dataviewer";
+import { Summary } from "../components/dashboard/summary";
 
 export const DashboardPage = () => {
   const { user, authLoading } = useAuth();
@@ -26,6 +27,7 @@ export const DashboardPage = () => {
   const [sessionsData, setSessionsData] = useState();
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+ 
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -34,6 +36,11 @@ export const DashboardPage = () => {
 
   const handleSetView = (newView) => {
     setView(newView);
+    if (newView === "null")
+    {
+      navigate(location.pathname, { replace: true });
+      return
+    }
     navigate(`?view=${newView}`, { replace: true });
   }
 
@@ -162,9 +169,8 @@ export const DashboardPage = () => {
               className="p-2 rounded-md !border-2 text-white w-full max-w-md"
             />
             <div
-              className={`max-h-[800px] overflow-y-auto bg-[#141e46] h-[800px] ${
-                formsData ? "" : "flex text-2xl justify-center items-center"
-              }`}
+              className={`max-h-[800px] overflow-y-auto bg-[#141e46] h-[800px] ${formsData ? "" : "flex text-2xl justify-center items-center"
+                }`}
             >
               {formsData ? (
                 filteredFearForms.length > 0 ? (
@@ -191,11 +197,10 @@ export const DashboardPage = () => {
               className="p-2 rounded-md !border-2 text-white w-full max-w-md"
             />
             <div
-              className={`max-h-[800px] overflow-y-auto bg-[#141e46] h-[800px] ${
-                patientsData
-                  ? ""
-                  : "flex text-2xl justify-center items-center"
-              }`}
+              className={`max-h-[800px] overflow-y-auto bg-[#141e46] h-[800px] ${patientsData
+                ? ""
+                : "flex text-2xl justify-center items-center"
+                }`}
             >
               {patientsData ? (
                 filteredPatients.length > 0 ? (
@@ -222,11 +227,10 @@ export const DashboardPage = () => {
               className="p-2 rounded-md !border-2 text-white w-full max-w-md"
             />
             <div
-              className={`max-h-[800px] overflow-y-auto bg-[#141e46] h-[800px] ${
-                sessionsData
-                  ? ""
-                  : "flex text-2xl justify-center items-center"
-              }`}
+              className={`max-h-[800px] overflow-y-auto bg-[#141e46] h-[800px] ${sessionsData
+                ? ""
+                : "flex text-2xl justify-center items-center"
+                }`}
             >
               {sessionsData ? (
                 filteredSessions.length > 0 ? (
@@ -250,12 +254,11 @@ export const DashboardPage = () => {
               placeholder="Search by parent or patient name..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="p-2 rounded-md !border-2 text-white w-full max-w-md"
+              className="p-2 rounded-md !border-2 text-white w-full "
             />
             <div
-              className={`max-h-[800px] overflow-y-auto bg-[#141e46] h-[800px] ${
-                formsData ? "" : "flex text-2xl justify-center items-center"
-              }`}
+              className={`max-h-[800px] overflow-y-auto bg-[#141e46] h-[800px] ${formsData ? "" : "flex text-2xl justify-center items-center"
+                }`}
             >
               {formsData ? (
                 filteredParentForms.length > 0 ? (
@@ -270,7 +273,9 @@ export const DashboardPage = () => {
           </div>
         );
       default:
-        return <Text>Select a section from the menu</Text>;
+        return therapistData && (
+          <Summary therapistData={therapistData} />
+        )
     }
   };
 
@@ -279,20 +284,14 @@ export const DashboardPage = () => {
   ) : (
     <Flex height="100vh" mt={4}>
       {/* Sidebar */}
-      <Box width="80px" bg="#141e46" p={4} boxShadow="md">
+      <div className="fixed md:static">
         <SideMenu setView={handleSetView} />
-      </Box>
+      </div>
 
       {/* Main content area */}
-      <Box flex="1" pt={2}>
-        <div className="flex items-center justify-center bg-[#141e46] h-14">
-          {therapistData && (
-            <Text className="font-bold text-2xl">
-              Welcome {therapistData.therapist[0].name}
-            </Text>
-          )}
-        </div>
-        <div className="m-8">{renderContent()}</div>
+      <Box flex="1" >
+        <div className="flex items-center justify-center bg-[#141e46] h-14" />
+        <div className="">{renderContent()}</div>
       </Box>
     </Flex>
   );

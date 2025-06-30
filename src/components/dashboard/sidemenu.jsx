@@ -45,6 +45,13 @@ export const SideMenu = ({setView}) => {
                                 </Link>
                             </div>
                             <Button onClick={() => {
+                                setView("null")
+                                onClose();
+                                }
+                            }>
+                                Summary
+                            </Button>
+                            <Button onClick={() => {
                                 setView("patients")
                                 onClose();
                                 }
